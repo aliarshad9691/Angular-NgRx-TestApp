@@ -1,13 +1,13 @@
 <div fxLayout="row" fxLayoutAlign="space-around" class="mainWrapper">
     <div fxFlex>
-        <app-input></app-input>
+        <app-input [number]="number1Observable"></app-input>
     </div>
     <div fxFlex>
         <app-renderer></app-renderer>
     </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="flex-end">
-    <button mat-fab color="accent">Start</button>
-    <button mat-fab color="primary">Stop</button>
-    <button mat-fab color="warn">Reset</button>
+    <button mat-fab color="accent" *ngIf="!started" (click)="start()">Start</button>
+    <button mat-fab color="primary" *ngIf="started" (click)="stop()">Stop</button>
+    <button mat-fab color="warn" *ngIf="!started" (click)="reset()">Reset</button>
 </div>

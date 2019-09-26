@@ -6,10 +6,10 @@
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-        <form>
-            <mat-form-field>
-                <input matInput placeholder="1st Number"/>
-            </mat-form-field>
-        </form>
+        <div fxFlex class="number" fxLayout="row" [class.hot]="(number | async) < 0">
+            <span>
+                {{number | async}}
+            </span>
+        </div>
     </mat-card-content>
 </mat-card>
